@@ -1,0 +1,26 @@
+<app-todo-list
+*ngFor="let p of tasks"
+[task]="p"
+(OnSelected)="selectedTask($event)"
+(Onclick)="deleteTask($event)"
+></app-todo-list>
+<br>
+<div class="card" *ngIf="isViews" >
+  <div class="card-body">
+    <h2>Task: {{name}}</h2>
+    <p>{{des}}</p>
+    <button (click)="deleteTask(id)">Delete</button>
+    <button (click)="close()">close</button>
+  </div>
+</div>
+<div *ngIf="!isViews" class="card">
+  <div class="card-body">
+    <h2>Add Task</h2>
+    name: <input type="text"[(ngModel)]="name">
+    description: <textarea [(ngModel)]="des"></textarea><br>
+    <button class="btn-primary" (click)="addTask()">Add</button>
+  </div>
+
+</div>
+
+

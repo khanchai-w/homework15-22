@@ -1,0 +1,9 @@
+.box {
+  width: 240px;
+  display: inline-block;
+  border: 1px solid gray;
+  text-align: left;
+  }
+  .selected {
+  background: lightgrey;
+  }
